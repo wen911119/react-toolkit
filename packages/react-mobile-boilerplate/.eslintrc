@@ -1,8 +1,7 @@
 {
-  "extends": "eslint-config-synacor",
+  "extends": ["standard", "standard-react", "plugin:react/recommended"],
   "rules":{
     "semi": ["error", "never"],
-    "space-before-function-paren": ["error", "always"],
     "indent": ["error", 2]
   }
 }
