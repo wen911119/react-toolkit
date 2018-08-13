@@ -1,5 +1,5 @@
 import React from 'react'
-import px2rem from 'p-to-r'
+import px2rem from 'p-to-r';
 
 function alternateInsert (arr, item) {
   let insertedArr = arr.reduce((all, current) => all.concat(current, item), [])

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 export default class HomePage extends Component {
-  componentDidMount() {
+  componentDidMount () {
     console.log(13331)
   }
   render () {
