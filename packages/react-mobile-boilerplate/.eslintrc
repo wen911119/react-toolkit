@@ -2,6 +2,7 @@
   "extends": ["standard", "standard-react", "plugin:react/recommended"],
   "rules":{
     "semi": ["error", "never"],
-    "indent": ["error", 2]
+    "indent": ["error", 2],
+    "react/prop-types": 1
   }
 }

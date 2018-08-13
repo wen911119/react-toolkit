@@ -1,5 +1,5 @@
 import React from 'react'
-import px2rem from 'p-to-r';
+import px2rem from 'p-to-r'
 
 function alternateInsert (arr, item) {
   let insertedArr = arr.reduce((all, current) => all.concat(current, item), [])
@@ -129,8 +129,7 @@ export const SlotRowView = ({ slot, children, ...otherProps }) => {
   if (slot) {
     if (typeof slot === 'number') {
       allChildren = alternateInsert(children, <SpaceHolder width={slot} />)
-    }
-    else {
+    } else {
       allChildren = alternateInsert(children, slot)
     }
   }
@@ -142,8 +141,7 @@ export const SlotColumnView = ({ slot = 0, children, ...otherProps }) => {
   if (slot) {
     if (typeof slot === 'number') {
       allChildren = alternateInsert(children, <SpaceHolder height={slot} />)
-    }
-    else {
+    } else {
       allChildren = alternateInsert(children, slot)
     }
   }

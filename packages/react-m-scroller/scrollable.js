@@ -1,11 +1,11 @@
-import React, { PureComponent } from "react";
+import React, { PureComponent } from 'react'
 
 export default class Scrollable extends PureComponent {
-  render({ children, distance, action, header, footer }) {
-    let _style = { transition: action === "none" ? "330ms" : "none" };
+  render ({ children, distance, action, header, footer }) {
+    let _style = { transition: action === 'none' ? '330ms' : 'none' }
     if (distance !== 0) {
       // 不能过早的加transform，因为在safari上，加了transform后动态内容高度会导致不能滚动
-      _style.transform = `translate3d(0px, ${distance / 2}px, 0px)`;
+      _style.transform = `translate3d(0px, ${distance / 2}px, 0px)`
     }
     return (
       <div style={_style}>
@@ -13,6 +13,6 @@ export default class Scrollable extends PureComponent {
         {children}
         {footer && footer()}
       </div>
-    );
+    )
   }
 }
