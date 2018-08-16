@@ -38,7 +38,7 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             plugins: [
-              ['transform-react-jsx'],
+              'transform-react-jsx',
               'transform-decorators-legacy',
               'transform-object-rest-spread',
               'transform-export-extensions',
@@ -60,7 +60,7 @@ module.exports = {
       cacheGroups: {
         common: {
           chunks: 'all',
-          test: /[\\/]node_modules[\\/](preact|preact-layoutview)[\\/]/,
+          test: /[\\/]node_modules[\\/](react|react-layout-suite)[\\/]/,
           name: 'common'
         }
       }
