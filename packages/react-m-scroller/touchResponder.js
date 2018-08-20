@@ -7,8 +7,7 @@ export default class TouchResponder extends PureComponent {
   }
   onTouchMove (e) {
     const { position } = this.props
-
-    if (position !== 'middle' && this.lastMoved) {
+    if (position !== 'middle') {
       const angle =
         (this.touchStartPoint.clientY - e.touches[0].clientY) /
         (this.touchStartPoint.clientX - e.touches[0].clientX)
@@ -21,16 +20,9 @@ export default class TouchResponder extends PureComponent {
           (distance < 0 && position === 'bottom')
         ) {
           // 下拉或上拉动作
-          // this.lastMoved = false;
           e.preventDefault()
           const action = position === 'top' ? 'pulldown' : 'pullup'
           this.setState({ distance, action })
-          // 换成requestAnimationFrame看不到明显优势，并且在安卓上有一定几率block掉touchend事件，非常坑爹。
-          // requestAnimationFrame(() => {
-          //   this.setState({ distance, action }, () => {
-          //     this.lastMoved = true;
-          //   });
-          // });
         }
       }
     }
@@ -38,9 +30,6 @@ export default class TouchResponder extends PureComponent {
   onTouchEnd () {
     if (this.props.position !== 'middle' && this.state.distance !== 0) {
       this.setState({ distance: 0, action: 'none' })
-      // requestAnimationFrame(() => {
-      //   this.setState({ distance: 0, action: "none" });
-      // });
     }
   }
   constructor (props) {
@@ -48,20 +37,29 @@ export default class TouchResponder extends PureComponent {
     this.onTouchMove = this.onTouchMove.bind(this)
     this.onTouchStart = this.onTouchStart.bind(this)
     this.onTouchEnd = this.onTouchEnd.bind(this)
-    this.lastMoved = true
+    this.eventTargetRef = React.createRef()
     this.state = {
       action: 'none', // pulldown,pullup
       distance: 0
     }
   }
+  componentDidMount () {
+    this.eventTargetRef.current.addEventListener(
+      'touchmove',
+      e => {
+        this.onTouchMove(e)
+      },
+      { passive: false }
+    )
+  }
   render () {
     const { children, ...otherProps } = this.props
-    const { distance, action } = this.props
+    const { distance, action } = this.state
     return (
       <div
-        onTouchMove={this.onTouchMove}
         onTouchStart={this.onTouchStart}
         onTouchEnd={this.onTouchEnd}
+        ref={this.eventTargetRef}
       >
         {cloneElement(children, { distance, action, ...otherProps })}
       </div>

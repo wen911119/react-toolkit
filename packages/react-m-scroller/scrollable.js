@@ -1,7 +1,8 @@
 import React, { PureComponent } from 'react'
 
 export default class Scrollable extends PureComponent {
-  render ({ children, distance, action, header, footer }) {
+  render () {
+    const { children, distance, action, header, footer } = this.props
     let _style = { transition: action === 'none' ? '330ms' : 'none' }
     if (distance !== 0) {
       // 不能过早的加transform，因为在safari上，加了transform后动态内容高度会导致不能滚动
