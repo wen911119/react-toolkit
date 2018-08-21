@@ -15,11 +15,13 @@
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-layout-suite": "^1.0.0",
-    "react-m-scroller": "^1.0.0"
+    "react-m-scroller": "^1.0.0",
+    "react-component-text": "^1.0.0"
   },
   "compileDependencies": [
     "react-layout-suite",
-    "react-m-scroller"
+    "react-m-scroller",
+    "react-component-text"
   ],
   "devDependencies": {
     "babel-core": "^6.26.3",
