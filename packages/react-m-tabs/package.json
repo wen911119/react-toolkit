@@ -10,8 +10,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "p-to-r": "^1.0.0"
+    "p-to-r": "^1.0.0",
+    "react-m-swiper": "^1.0.0"
   },
+  "compileDependencies": [
+    "react-m-swiper"
+  ],
   "peerDependencies": {
     "react": "^16.4.2",
     "react-dom": "^16.4.2"
