@@ -75,7 +75,7 @@ const Swipeable = ({
   animation,
   style = {}
 }) => {
-  const translateX = (1 - index) * width + offset
+  const translateX = -index * width + offset
   return (
     <div
       style={Object.assign({}, style, innerStyle, {
@@ -95,6 +95,17 @@ const Swipeable = ({
 }
 
 export default class Swiper extends PureComponent {
+  static getDerivedStateFromProps (props, state) {
+    // 这里用anti-pattern是情况特殊
+    if (props.current !== state.prevIndex) {
+      return {
+        prevIndex: props.current,
+        animation: true,
+        activeIndex: props.current
+      }
+    }
+    return null
+  }
   constructor (props) {
     super(props)
     this.onSwipeStart = this.onSwipeStart.bind(this)
@@ -104,9 +115,10 @@ export default class Swiper extends PureComponent {
       containerWidth: document.body.clientWidth
     }
     this.state = {
-      activeIndex: 1,
+      activeIndex: props.current || 0,
       animation: false,
-      distance: 0
+      distance: 0,
+      prevIndex: props.current
     }
   }
   onSwipeStart () {
@@ -114,8 +126,9 @@ export default class Swiper extends PureComponent {
   }
   onSwiping ({ distance }) {
     if (
-      (distance > 0 && this.state.activeIndex === 1) ||
-      (distance < 0 && this.state.activeIndex === this.props.children.length)
+      (distance > 0 && this.state.activeIndex === 0) ||
+      (distance < 0 &&
+        this.state.activeIndex + 1 === this.props.children.length)
     ) {
       return
     }
@@ -123,8 +136,9 @@ export default class Swiper extends PureComponent {
   }
   onSwipeEnd ({ distance, speed }) {
     if (
-      (distance > 0 && this.state.activeIndex === 1) ||
-      (distance < 0 && this.state.activeIndex === this.props.children.length)
+      (distance > 0 && this.state.activeIndex === 0) ||
+      (distance < 0 &&
+        this.state.activeIndex + 1 === this.props.children.length)
     ) {
       return
     }
