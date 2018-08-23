@@ -6,7 +6,10 @@ export default class TouchResponder extends PureComponent {
     }
   }
   onTouchMove (e) {
-    const { position } = this.props
+    const { position, freeze } = this.props
+    if (freeze) {
+      return
+    }
     if (position !== 'middle') {
       const angle =
         (this.touchStartPoint.clientY - e.touches[0].clientY) /

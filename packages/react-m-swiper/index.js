@@ -3,7 +3,8 @@ import React, { PureComponent } from 'react'
 const itemStyle = {
   width: '100vw',
   display: 'inline-block',
-  height: '100%'
+  height: '100%',
+  verticalAlign: 'top'
 }
 
 const innerStyle = {
@@ -73,6 +74,7 @@ const Swipeable = ({
   offset,
   width,
   animation,
+  isSwiping,
   style = {}
 }) => {
   const translateX = -index * width + offset
@@ -86,7 +88,7 @@ const Swipeable = ({
       {children.map((child, i) => {
         return (
           <div key={i} style={itemStyle}>
-            {child}
+            {React.cloneElement(child, {freeze: isSwiping})}
           </div>
         )
       })}
@@ -118,7 +120,8 @@ export default class Swiper extends PureComponent {
       activeIndex: props.current || 0,
       animation: false,
       distance: 0,
-      prevIndex: props.current
+      prevIndex: props.current,
+      isSwiping: false
     }
   }
   onSwipeStart () {
@@ -132,7 +135,7 @@ export default class Swiper extends PureComponent {
     ) {
       return
     }
-    this.setState({ distance })
+    this.setState({ distance, isSwiping: true })
   }
   onSwipeEnd ({ distance, speed }) {
     if (
@@ -144,7 +147,7 @@ export default class Swiper extends PureComponent {
     }
     const { children } = this.props
     const { containerWidth } = this.$env
-    let base = { distance: 0, animation: true }
+    let base = { distance: 0, animation: true, isSwiping: false }
     if (Math.abs(distance) > containerWidth / children.length || speed > 0.6) {
       base.activeIndex = this.state.activeIndex + (distance > 0 ? -1 : 1)
       this.props.onChange && this.props.onChange(base.activeIndex)
@@ -154,7 +157,7 @@ export default class Swiper extends PureComponent {
   render () {
     const { children, fill } = this.props
     const { containerWidth } = this.$env
-    const { activeIndex, animation, distance } = this.state
+    const { activeIndex, animation, distance, isSwiping } = this.state
     let wrapStyle = {
       overflow: 'hidden'
     }
@@ -174,6 +177,7 @@ export default class Swiper extends PureComponent {
             width={containerWidth}
             animation={animation}
             offset={distance}
+            isSwiping={isSwiping}
             style={{ height: '100%' }}
           >
             {children}
