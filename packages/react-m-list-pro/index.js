@@ -1,21 +1,16 @@
 import React, { PureComponent } from 'react'
 
 import { ScrollerWithRefreshAndLoadMore } from 'react-m-scroller'
-
+import ListDataProvider from './listDataProvider'
+import FlatList from './list'
 export default class ListPro extends PureComponent {
-  constructor (props) {
-    super(props)
-    this.state = {
-      a: 1
-    }
-  }
   render () {
     return (
-      <div>
+      <ListDataProvider {...this.props}>
         <ScrollerWithRefreshAndLoadMore>
-          <div>111</div>
+          <FlatList />
         </ScrollerWithRefreshAndLoadMore>
-      </div>
+      </ListDataProvider>
     )
   }
 }
