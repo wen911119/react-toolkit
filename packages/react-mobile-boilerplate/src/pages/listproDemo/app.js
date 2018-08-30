@@ -17,13 +17,46 @@ export default class HomePage extends Component {
       )
     }
   }
+  format (ret) {
+    let res = {
+      list: [
+        Math.random(),
+        Math.random(),
+        Math.random(),
+        Math.random(),
+        Math.random(),
+        Math.random(),
+        Math.random(),
+        Math.random(),
+        Math.random(),
+        Math.random()
+      ],
+      pageInfo: {
+        totalPage: 5,
+        currentPage: ret.pageNum
+      }
+    }
+    return res
+  }
   componentDidMount () {}
 
-  onTabsChange (index) {
-    console.log(index)
+  fetchListData (p) {
+    console.log(p, 222222)
+    return new Promise(resolve => {
+      setTimeout(() => {
+        resolve(p)
+      }, 2000)
+    })
   }
 
   render () {
-    return <ListPro renderItem={this.renderItem} height='400px' />
+    return (
+      <ListPro
+        format={this.format}
+        fetchListData={this.fetchListData}
+        renderItem={this.renderItem}
+        height='400px'
+      />
+    )
   }
 }

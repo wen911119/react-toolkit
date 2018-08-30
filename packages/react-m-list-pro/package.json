@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "lodash.isequal": "^4.5.0",
     "p-to-r": "^1.0.0",
     "react-m-scroller": "^1.0.0"
   },
