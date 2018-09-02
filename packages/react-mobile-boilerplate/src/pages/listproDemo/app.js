@@ -7,29 +7,41 @@ export default class HomePage extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      list: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+      activeIndex: '',
+      extraData: {
+        activeIndex: ''
+      }
     }
-    this.renderItem = item => {
+    this.onItemClick = index => () => {
+      this.setState({ extraData: { activeIndex: index } })
+    }
+    this.renderItem = (item, index, extraData) => {
+      console.log(3333333)
       return (
-        <XCenterView height={200}>
-          <Text>{item}</Text>
-        </XCenterView>
+        <div onClick={this.onItemClick(index)}>
+          <XCenterView
+            height={200}
+            bgColor={extraData.activeIndex === index ? '#f8584f' : '#fff'}
+          >
+            <Text>{item.num}</Text>
+          </XCenterView>
+        </div>
       )
     }
   }
   format (ret) {
     let res = {
       list: [
-        Math.random(),
-        Math.random(),
-        Math.random(),
-        Math.random(),
-        Math.random(),
-        Math.random(),
-        Math.random(),
-        Math.random(),
-        Math.random(),
-        Math.random()
+        { active: false, num: Math.random() },
+        { active: false, num: Math.random() },
+        { active: false, num: Math.random() },
+        { active: true, num: Math.random() },
+        { active: false, num: Math.random() },
+        { active: false, num: Math.random() },
+        { active: false, num: Math.random() },
+        { active: false, num: Math.random() },
+        { active: false, num: Math.random() },
+        { active: false, num: Math.random() }
       ],
       pageInfo: {
         totalPage: 5,
@@ -56,6 +68,7 @@ export default class HomePage extends Component {
         fetchListData={this.fetchListData}
         renderItem={this.renderItem}
         height='400px'
+        extraData={this.state.extraData}
       />
     )
   }
