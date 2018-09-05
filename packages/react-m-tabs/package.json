@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@wj/react-m-swiper": "^1.0.0",
+    "@wj/react-m-swiper": "^1.0.1",
     "p-to-r": "^1.0.0"
   },
   "compileDependencies": [
