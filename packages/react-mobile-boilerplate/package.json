@@ -12,12 +12,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@ruiyun/react-layout-suite": "^1.0.2",
-    "@ruiyun/react-m-list-pro": "^1.0.2",
-    "@ruiyun/react-m-scroller": "^1.0.2",
-    "@ruiyun/react-m-swiper": "^1.0.2",
-    "@ruiyun/react-m-tabs": "^1.0.2",
-    "@ruiyun/react-text": "^1.0.2",
+    "@ruiyun/react-layout-suite": "^1.0.3",
+    "@ruiyun/react-m-list-pro": "^1.0.3",
+    "@ruiyun/react-m-scroller": "^1.0.3",
+    "@ruiyun/react-m-swiper": "^1.0.3",
+    "@ruiyun/react-m-tabs": "^1.0.3",
+    "@ruiyun/react-text": "^1.0.3",
     "react": "^16.4.2",
     "react-dom": "^16.4.2"
   },

@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@ruiyun/react-m-scroller": "^1.0.2",
+    "@ruiyun/react-m-scroller": "^1.0.3",
     "lodash.isequal": "^4.5.0",
     "p-to-r": "^1.0.0"
   },
