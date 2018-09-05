@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import { XCenterView } from '@wj/react-layout-suite'
-import Text from '@wj/react-text'
-import Swiper from '@wj/react-m-swiper'
+import { XCenterView } from '@ruiyun/react-layout-suite'
+import Text from '@ruiyun/react-text'
+import Swiper from '@ruiyun/react-m-swiper'
 
 export default class HomePage extends Component {
   constructor (props) {

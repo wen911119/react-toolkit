@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import { XCenterView } from '@wj/react-layout-suite'
-import { ScrollerWithRefreshAndLoadMore } from '@wj/react-m-scroller'
-import Text from '@wj/react-text'
+import { XCenterView } from '@ruiyun/react-layout-suite'
+import { ScrollerWithRefreshAndLoadMore } from '@ruiyun/react-m-scroller'
+import Text from '@ruiyun/react-text'
 
 export default class HomePage extends Component {
   constructor (props) {

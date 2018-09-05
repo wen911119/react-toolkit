@@ -1,5 +1,5 @@
 {
-  "name": "@wj/react-m-list-pro",
+  "name": "@ruiyun/react-m-list-pro",
   "version": "1.0.1",
   "description": "",
   "main": "index.js",
@@ -9,12 +9,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@wj/react-m-scroller": "^1.0.1",
+    "@ruiyun/react-m-scroller": "^1.0.1",
     "lodash.isequal": "^4.5.0",
     "p-to-r": "^1.0.0"
   },
   "compileDependencies": [
-    "@wj/react-m-scroller"
+    "@ruiyun/react-m-scroller"
   ],
   "peerDependencies": {
     "react": "^16.4.2",

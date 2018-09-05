@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react'
-import Swiper from '@wj/react-m-swiper'
+import Swiper from '@ruiyun/react-m-swiper'
 import px2rem from 'p-to-r'
 
 const renderTabHeaderItem = ({

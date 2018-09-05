@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import { XCenterView } from '@wj/react-layout-suite'
-import Text from '@wj/react-text'
-import Tabs from '@wj/react-m-tabs'
-import { ScrollerWithRefreshAndLoadMore } from '@wj/react-m-scroller'
+import { XCenterView } from '@ruiyun/react-layout-suite'
+import Text from '@ruiyun/react-text'
+import Tabs from '@ruiyun/react-m-tabs'
+import { ScrollerWithRefreshAndLoadMore } from '@ruiyun/react-m-scroller'
 
 export default class HomePage extends Component {
   constructor (props) {

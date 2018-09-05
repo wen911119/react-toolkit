@@ -1,5 +1,5 @@
 {
-  "name": "@wj/react-mobile-boilerplate",
+  "name": "@ruiyun/react-mobile-boilerplate",
   "version": "1.0.1",
   "description": "",
   "main": "index.js",
@@ -12,22 +12,22 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@wj/react-layout-suite": "^1.0.1",
-    "@wj/react-m-list-pro": "^1.0.1",
-    "@wj/react-m-scroller": "^1.0.1",
-    "@wj/react-m-swiper": "^1.0.1",
-    "@wj/react-m-tabs": "^1.0.1",
-    "@wj/react-text": "^1.0.1",
+    "@ruiyun/react-layout-suite": "^1.0.1",
+    "@ruiyun/react-m-list-pro": "^1.0.1",
+    "@ruiyun/react-m-scroller": "^1.0.1",
+    "@ruiyun/react-m-swiper": "^1.0.1",
+    "@ruiyun/react-m-tabs": "^1.0.1",
+    "@ruiyun/react-text": "^1.0.1",
     "react": "^16.4.2",
     "react-dom": "^16.4.2"
   },
   "compileDependencies": [
-    "@wj/react-layout-suite",
-    "@wj/react-m-scroller",
-    "@wj/react-text",
-    "@wj/react-m-swiper",
-    "@wj/react-m-tabs",
-    "@wj/react-m-list-pro"
+    "@ruiyun/react-layout-suite",
+    "@ruiyun/react-m-scroller",
+    "@ruiyun/react-text",
+    "@ruiyun/react-m-swiper",
+    "@ruiyun/react-m-tabs",
+    "@ruiyun/react-m-list-pro"
   ],
   "devDependencies": {
     "babel-core": "^6.26.3",
