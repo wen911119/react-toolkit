@@ -14,20 +14,20 @@
   "dependencies": {
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
-    "react-layout-suite": "^1.0.0",
-    "react-m-scroller": "^1.0.0",
-    "react-component-text": "^1.0.0",
-    "react-m-swiper": "^1.0.0",
-    "react-m-tabs": "^1.0.0",
-    "react-m-list-pro": "^1.0.0"
+    "@wj/react-layout-suite": "^1.0.0",
+    "@wj/react-m-scroller": "^1.0.0",
+    "@wj/react-text": "^1.0.0",
+    "@wj/react-m-swiper": "^1.0.0",
+    "@wj/react-m-tabs": "^1.0.0",
+    "@wj/react-m-list-pro": "^1.0.0"
   },
   "compileDependencies": [
-    "react-layout-suite",
-    "react-m-scroller",
-    "react-component-text",
-    "react-m-swiper",
-    "react-m-tabs",
-    "react-m-list-pro"
+    "@wj/react-layout-suite",
+    "@wj/react-m-scroller",
+    "@wj/react-text",
+    "@wj/react-m-swiper",
+    "@wj/react-m-tabs",
+    "@wj/react-m-list-pro"
   ],
   "devDependencies": {
     "babel-core": "^6.26.3",

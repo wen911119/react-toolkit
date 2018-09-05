@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 
-import { ScrollerWithRefreshAndLoadMore } from 'react-m-scroller'
+import { ScrollerWithRefreshAndLoadMore } from '@wj/react-m-scroller'
 import ListDataProvider from './listDataProvider'
 import FlatList from './list'
 import Pagination from './pagination'

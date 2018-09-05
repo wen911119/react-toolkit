@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import { XCenterView } from 'react-layout-suite'
-import Text from 'react-component-text'
-import Tabs from 'react-m-tabs'
+import { XCenterView } from '@wj/react-layout-suite'
+import Text from '@wj/react-text'
+import Tabs from '@wj/react-m-tabs'
 
 export default class HomePage extends Component {
   constructor (props) {

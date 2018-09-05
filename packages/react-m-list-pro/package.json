@@ -1,5 +1,5 @@
 {
-  "name": "react-m-list-pro",
+  "name": "@wj/react-m-list-pro",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,10 +11,10 @@
   "dependencies": {
     "lodash.isequal": "^4.5.0",
     "p-to-r": "^1.0.0",
-    "react-m-scroller": "^1.0.0"
+    "@wj/react-m-scroller": "^1.0.0"
   },
   "compileDependencies": [
-    "react-m-scroller"
+    "@wj/react-m-scroller"
   ],
   "peerDependencies": {
     "react": "^16.4.2",

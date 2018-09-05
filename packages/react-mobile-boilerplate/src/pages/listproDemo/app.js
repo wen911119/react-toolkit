@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import ListPro from 'react-m-list-pro'
-import { XCenterView } from 'react-layout-suite'
-import Text from 'react-component-text'
+import ListPro from '@wj/react-m-list-pro'
+import { XCenterView } from '@wj/react-layout-suite'
+import Text from '@wj/react-text'
 
 export default class HomePage extends Component {
   constructor (props) {
