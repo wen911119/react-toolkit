@@ -1,6 +1,6 @@
 {
   "name": "@ruiyun/react-m-tabs",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "index.js",
   "module": "index.js",
@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@ruiyun/react-m-swiper": "^1.0.1",
+    "@ruiyun/react-m-swiper": "^1.0.2",
     "p-to-r": "^1.0.0"
   },
   "compileDependencies": [
