@@ -4,13 +4,13 @@ const itemStyle = {
   width: '100vw',
   display: 'inline-block',
   height: '100%',
-  verticalAlign: 'top'
+  verticalAlign: 'top',
+  whiteSpace: 'normal'
 }
 
 const innerStyle = {
   display: 'inline-block',
-  whiteSpace: 'nowrap',
-  lineHeight: 0
+  whiteSpace: 'nowrap'
 }
 
 export class SwipeResponder extends PureComponent {
@@ -170,7 +170,7 @@ export default class Swiper extends PureComponent {
           onSwipeStart={this.onSwipeStart}
           onSwiping={this.onSwiping}
           onSwipeEnd={this.onSwipeEnd}
-          style={{ lineHeight: 0, height: '100%' }}
+          style={{ height: '100%' }}
         >
           <Swipeable
             index={activeIndex}
