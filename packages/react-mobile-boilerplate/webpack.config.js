@@ -60,7 +60,7 @@ module.exports = {
       cacheGroups: {
         common: {
           chunks: 'all',
-          test: /[\\/]node_modules[\\/](react|@ruiyun\/react-layout-suite)[\\/]/,
+          test: /[\\/]node_modules[\\/](react|react-dom|axios|@ruiyun\/react-layout-suite)[\\/]/,
           name: 'common'
         }
       }
