@@ -2,7 +2,11 @@ import React from 'react'
 import px2rem from 'p-to-r'
 
 function alternateInsert (arr, item) {
-  let insertedArr = arr.reduce((all, current) => all.concat(current, item), [])
+  let insertedArr = arr.reduce(
+    (all, current, index) =>
+      all.concat(current, React.cloneElement(item, { key: index })),
+    []
+  )
   insertedArr.pop()
   return insertedArr
 }
