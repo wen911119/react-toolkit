@@ -135,7 +135,8 @@ export default class Tabs extends PureComponent {
       <div style={Object.assign(_style, style)}>
         <div
           style={{
-            boxShadow: `0 ${px2rem(8)} ${px2rem(8)} 0 rgba(0,0,0,0.10)`
+            boxShadow: `0 ${px2rem(8)} ${px2rem(8)} 0 rgba(0,0,0,0.10)`,
+            marginBottom: px2rem(8)
           }}
         >
           <TabHeader
