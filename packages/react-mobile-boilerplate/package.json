@@ -18,6 +18,7 @@
     "@ruiyun/react-m-swiper": "^1.0.3",
     "@ruiyun/react-m-tabs": "^1.0.3",
     "@ruiyun/react-text": "^1.0.3",
+    "axios": "^0.18.0",
     "react": "^16.4.2",
     "react-dom": "^16.4.2"
   },

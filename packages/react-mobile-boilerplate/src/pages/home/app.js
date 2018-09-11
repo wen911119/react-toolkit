@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { XCenterView } from '@ruiyun/react-layout-suite'
 import { ScrollerWithRefreshAndLoadMore } from '@ruiyun/react-m-scroller'
 import Text from '@ruiyun/react-text'
-
+import { fetchFreeTasks } from '../../services/task'
 export default class HomePage extends Component {
   constructor (props) {
     super(props)
@@ -10,8 +10,9 @@ export default class HomePage extends Component {
       list: [1, 2, 3, 4, 5, 6, 7, 8, 9]
     }
   }
-  componentDidMount () {
-    console.log(13331)
+  async componentDidMount () {
+    const ret = await fetchFreeTasks()
+    console.log(ret, 99999)
   }
 
   render () {
