@@ -7,6 +7,7 @@ export default class ListPro extends PureComponent {
     this.onLoadMore = this.onLoadMore.bind(this)
     this.previousParmas = props.pramas || {}
     this.previousPaginationInfo = props.paginationInfo
+    this.nomore = false
     this.state = {
       data: [],
       afterFirstRequest: false
@@ -17,8 +18,14 @@ export default class ListPro extends PureComponent {
     this.onRefreshDone = done
   }
   onLoadMore (done) {
-    this.props._onLoadMore && this.props._onLoadMore()
-    this.onLoadMoreDone = done
+    // 如果第一次加载或者刷新时就没有更多了，就直接触发done(true)
+    // 不用再发请求
+    if (this.nomore) {
+      done(this.nomore)
+    } else {
+      this.props._onLoadMore && this.props._onLoadMore(done)
+      this.onLoadMoreDone = done
+    }
   }
   async _fecthListData (p) {
     const { fetchListData, format } = this.props
@@ -27,12 +34,13 @@ export default class ListPro extends PureComponent {
       list,
       pageInfo: { totalPage, currentPage }
     } = format(await fetchListData(p))
+    this.nomore = totalPage <= currentPage
     if (currentPage === 1 || currentPage === 0) {
       newList = list
-      this.onRefreshDone && this.onRefreshDone()
+      this.onRefreshDone && this.onRefreshDone(this.nomore)
     } else {
       newList = newList.concat(list)
-      this.onLoadMoreDone && this.onLoadMoreDone(totalPage <= currentPage)
+      this.onLoadMoreDone && this.onLoadMoreDone(this.nomore)
     }
     this.setState({ data: newList, afterFirstRequest: true })
   }
@@ -44,9 +52,11 @@ export default class ListPro extends PureComponent {
       _onRefresh()
     } else if (!isEqual(this.previousPaginationInfo, paginationInfo)) {
       // 更新
-      this._fecthListData(Object.assign({}, params, paginationInfo)).then(() => {
-        loading && loading.hide && loading.hide()
-      })
+      this._fecthListData(Object.assign({}, params, paginationInfo)).then(
+        () => {
+          loading && loading.hide && loading.hide()
+        }
+      )
     }
     this.previousParmas = params
     this.previousPaginationInfo = paginationInfo
