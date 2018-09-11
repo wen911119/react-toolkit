@@ -63,6 +63,7 @@ export default class TouchResponder extends PureComponent {
         onTouchStart={this.onTouchStart}
         onTouchEnd={this.onTouchEnd}
         ref={this.eventTargetRef}
+        style={{minHeight: '100%'}}
       >
         {cloneElement(children, { distance, action, ...otherProps })}
       </div>
