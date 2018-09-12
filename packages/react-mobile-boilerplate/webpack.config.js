@@ -37,14 +37,7 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            plugins: [
-              'transform-react-jsx',
-              'transform-decorators-legacy',
-              'transform-object-rest-spread',
-              'transform-export-extensions',
-              'syntax-dynamic-import',
-              'transform-react-constant-elements'
-            ]
+            presets: ['react-app']
           }
         }
       }
