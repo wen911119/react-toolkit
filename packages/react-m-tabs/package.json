@@ -35,5 +35,8 @@
     "webpack-cli": "^3.0.8",
     "webpack-post-compile-plugin": "^0.4.1",
     "babel-preset-react-app": "^3.1.2"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
