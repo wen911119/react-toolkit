@@ -3,34 +3,41 @@ import { XCenterView } from '@ruiyun/react-layout-suite'
 import Text from '@ruiyun/react-text'
 import Swiper from '@ruiyun/react-m-swiper'
 
+class Test extends Component {
+  componentDidMount () {
+    console.log('componentDidMountpppppp=====pppppp')
+  }
+  render () {
+    return <div style={{ height: '300px' }}>hello-test</div>
+  }
+}
 export default class HomePage extends Component {
   constructor (props) {
     super(props)
+    this.onClick = this.onClick.bind(this)
     this.state = {
-      list: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+      text: '123'
     }
   }
-  componentDidMount () {
-  }
+  componentDidMount () {}
 
-  onTabsChange (index) {
-    console.log(index)
+  onClick () {
+    console.log('uuuyuuuu')
+    this.setState({ text: 'text233' })
   }
 
   render () {
     return (
-      <Swiper onChange={this.onTabsChange}>
-        <XCenterView height={600}>
-          <Text size={30} color='#ccc'>
-            hello1
-          </Text>
-        </XCenterView>
-        <XCenterView height={600}>
-          <Text size={30} color='#ccc'>
-            hello2
-          </Text>
-        </XCenterView>
-      </Swiper>
+      <div onClick={this.onClick}>
+        <Swiper onChange={this.onTabsChange}>
+          <Test />
+          <XCenterView height={600}>
+            <Text size={30} color='#ccc'>
+              {this.state.text}
+            </Text>
+          </XCenterView>
+        </Swiper>
+      </div>
     )
   }
 }
